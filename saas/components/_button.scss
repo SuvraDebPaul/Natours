@@ -43,6 +43,14 @@
       background-color: $color-white;
     }
   }
+  &--green {
+    background-color: $Dark_Green;
+    color: white;
+
+    &::after {
+      background-color: $Dark_Green;
+    }
+  }
 }
 
 .btn-text {
