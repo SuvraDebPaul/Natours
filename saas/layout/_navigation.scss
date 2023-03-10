@@ -14,6 +14,14 @@
     box-shadow: 0 1rem 2rem rgba(black, 0.2);
     text-align: center;
     cursor: pointer;
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
   }
   &__background {
     height: 6rem;
@@ -25,7 +33,16 @@
     background-image: radial-gradient($Light_Green, $Dark_Green);
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
   }
+
   &__nav {
     height: 100vh;
     width: 0;
