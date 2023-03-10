@@ -13,7 +13,8 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    shape-outside: circle(30% at 30% 40%);
+    --webkit-shape-outside: circle(40% at 45% 50%);
+    shape-outside: circle(40% at 45% 50%);
 
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-2rem) skewX(12deg);

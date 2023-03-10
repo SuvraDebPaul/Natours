@@ -32,3 +32,26 @@
   padding: 15rem 0;
   position: relative;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $Light_Green, $Dark_Green);
+}
+.book {
+  background-image: linear-gradient(
+      110deg,
+      rgba(white, 0.9) 0%,
+      rgba(white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../images/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(#000000, 0.15);
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}
