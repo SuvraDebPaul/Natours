@@ -493,7 +493,10 @@ body {
   position: fixed;
   top: 6rem;
   right: 6rem;
-  z-index: 2000; }
+  z-index: 2000;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer; }
 
 .navigation__background {
   height: 6rem;
@@ -504,15 +507,17 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
-  transform: scale(80); }
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1); }
 
 .navigation__nav {
   height: 100vh;
-  width: 100%;
+  width: 0;
   position: fixed;
   top: 0;
-  right: 0;
-  z-index: 1500; }
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
 
 .navigation__list {
   position: absolute;
@@ -520,7 +525,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
 .navigation__item {
   margin: 1rem; }
@@ -544,6 +550,48 @@ body {
   background-position: 100%;
   color: #28b485;
   transform: translateX(1rem); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  width: 100%;
+  opacity: 1; }
+
+.navigation__nav-icon {
+  position: relative;
+  margin-top: 3.3rem; }
+  .navigation__nav-icon, .navigation__nav-icon::before, .navigation__nav-icon::after {
+    width: 3rem;
+    height: 3px;
+    background-color: #333;
+    display: inline-block;
+    transition: all 0.3s ease-in-out; }
+  .navigation__nav-icon::before, .navigation__nav-icon::after {
+    content: "";
+    position: absolute;
+    left: 0; }
+  .navigation__nav-icon::before {
+    top: -0.8rem; }
+  .navigation__nav-icon::after {
+    top: 0.8rem; }
+
+.navigation__button:hover .navigation__nav-icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__nav-icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__nav-icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__nav-icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__nav-icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
 
 .header {
   height: 95vh;
